@@ -25,7 +25,7 @@ public class Ticket {
         this.status = status;
     }
 
-    public void cancelTicket() {
-        this.status = "Cancelled";
-    }
+    public int getPnrNumber() { return pnrNumber; }
+
+    public void cancelTicket() { this.status = "Cancelled"; }
 }

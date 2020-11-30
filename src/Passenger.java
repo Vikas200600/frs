@@ -53,10 +53,10 @@ public class Passenger {
         idCounter=0;
     }
 
-    public Passenger(Contact contact, Address address){
+    public Passenger(String name, String phoneNumber, String email, String street, String city, String state) {
         this.passengerId = ++idCounter;
-        this.contact = contact;
-        this.address = address;
+        this.contact = new Contact(name, phoneNumber, email);
+        this.address = new Address(street, city, state);
     }
 
     public int getPassengerId() { return passengerId; }

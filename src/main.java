@@ -1,12 +1,16 @@
 public class main {
+    public static void printTicketDetails(Ticket ticket){
+        System.out.println(ticket.getPnrNumber());
+    }
+
     public static void main(String args[]) {
-//        Contact contact = new Contact("Vikas", "8892045813", "vikas200600@gmail.com");
-//        Address address = new Address("svRoad", "Bengaluru", "Karnataka");
-//        Passenger passenger = new Passenger(contact, address);
-//        Passenger passenger2 = new Passenger(contact, address);
-//        System.out.println(passenger.passengerId);
-//        System.out.println(passenger2.getPassengerId());
+        Passenger passenger = new Passenger("Vikas", "8892045813", "vikas200600@gmail.com", "svRoad", "Bengaluru", "Karnataka");
         Flight flight = new Flight(1,"JAZ",50,5);
-        System.out.println(flight.getAirline());
+        String[] specialService = new String[]{"food","drink"};
+        RegularTicket regularTicket = new RegularTicket(1, "Benagaluru", "Mumbai", "01/12/2020 10:00", "01/12/2020 12:00", flight, passenger, 1,120, "Confirmed", specialService);
+        String[] touristPlace = new String[]{"a", "b", "c"};
+        TouristTicket touristTicket = new TouristTicket(2, "Benagaluru", "Mumbai", "01/12/2020 10:00", "01/12/2020 12:00", flight, passenger, 1,120, "Confirmed", "Mumbai", touristPlace);
+        printTicketDetails(regularTicket);
+        printTicketDetails(touristTicket);
     }
 }
